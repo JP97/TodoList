@@ -45,6 +45,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="babel.config.js" />
+    <Content Include="src\components\TodoItem.vue">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\components\TodosList.vue">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="src\main.js" />
   </ItemGroup>
   <PropertyGroup>
