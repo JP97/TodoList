@@ -1,15 +1,18 @@
 <template>
     <div class="TodoItem">
-        <div v-for="todo in todos">
-            <h1>{{todos.name}}</h1>
-        </div>
+        <!-- bruger props for at vise de data -->
+        <p>{{todoitem.name}}</p>
     </div>
 </template>
 
 <script>
     export default {
+        //navn af det component
         name: "TodoItem",
-        props: ["todos"]
+
+        //modtager det array der kommer fra TodosList
+        //det er navnet fra de enkelte todoitem fra forloopet i todoslist
+        props:["todoitem"]
     }
 </script>
 

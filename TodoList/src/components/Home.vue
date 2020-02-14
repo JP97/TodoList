@@ -7,6 +7,7 @@
 
 <script>
     export default {
+        //navn af det component
         name: 'Home',
         props: {
             msg: String
