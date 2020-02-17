@@ -19,17 +19,17 @@
                     {
                         id: 1,
                         name: 'Make a blog Post',
-                        done: true
+                        completed: true
                     },
                     {
                         id: 2,
-                        name: 'Remove the clothes that are dry',
-                        done: false
+                        name: 'Make components work together',
+                        completed: false
                     },
                     {
                         id: 3,
                         name: 'Be happy',
-                        done: false
+                        completed: false
                     }
                 ]
             }

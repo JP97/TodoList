@@ -32,4 +32,11 @@
 </script>
 
 <style scoped>
+    .TodosList{
+        margin:auto;
+        width:50%;
+        text-align: center;
+    }
+
+
 </style>
