@@ -1,5 +1,6 @@
 <template>
     <div id="app">
+        <Header></Header>
         <!--med  v.bind sender man det todos array fra Data() til todosList component som får det i props se videre i todosList-->
         <!-- catcher også det emittete event med v-on og kører så metoden deleteTodoItem -->
         <TodosList v-bind:todos="todos" v-on:del-todoitem="deleteTodoItem"/>
@@ -8,11 +9,13 @@
 
 <script>
     import TodosList from './components/TodosList.vue';
+    import Header from './components/layout/Header.vue';
 
     export default {
         name: 'app',
         components: {
-            TodosList
+            TodosList,
+            Header
         }, 
         data() {
             return {
