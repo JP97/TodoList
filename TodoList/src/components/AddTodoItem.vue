@@ -2,7 +2,7 @@
     <div class="addTodoItem">
         <div>
             <input type="text" value="Write your task here"/>
-            <button>Add task</button>
+            <button @click="$emit('add-todoitem', input.value)">Add task</button>
         </div>
     </div>
 </template>
