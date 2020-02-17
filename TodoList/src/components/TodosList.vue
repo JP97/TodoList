@@ -6,7 +6,8 @@
             <!-- TodoItem kan blive embeded -->
             <!-- for hver interation vil vi gerne binde de todoitem til det embedede Todoitem -->
             <!-- sender hvert enkelt item nu til TodoItem til deres props -->
-            <TodoItem v-bind:todoitem="todoitem"/>
+            <!-- v-on catcher eventet der blev fyret fra todoitem og emitter endnu længere tilbage til app-->
+            <TodoItem v-bind:todoitem="todoitem" v-on:del-todoitem="$emit('del-todoitem', todoitem.id)"/>
         </div>
     </div>
 </template>

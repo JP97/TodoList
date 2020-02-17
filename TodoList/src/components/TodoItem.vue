@@ -4,8 +4,11 @@
     <div class="TodoItem" v-bind:class="{'is-finished':todoitem.completed}">
         <!-- bruger props for at vise de data -->
         <p>
+            <!-- er sådan set et event. Ved ændring af checkboxes kører vi denne methode -->
         <input type="checkbox" v-on:change="markCompleted"/>
         {{todoitem.name}}
+            <!-- click event der emitter det "del-todo" event der sender todoitem.id med som parameter -->
+        <button @click="$emit('del-todoitem', todoitem.id)" class="del">DELETE</button>
         </p>
     </div>
 </template>
@@ -19,6 +22,8 @@
         //det er navnet fra de enkelte todoitem fra forloopet i todoslist
         props: ["todoitem"],
 
+        //alle methoder bliver skrevet her.
+        //man kan tilgå props med hjælp af "this." som man kan se forneden
         methods: {
             markCompleted() {
                 this.todoitem.completed = !this.todoitem.completed;
@@ -42,5 +47,9 @@
     .checkBox{
         /*lav at checkboxen altid er til venstre*/
         
+    }
+
+    .del{
+        color:red;
     }
 </style>

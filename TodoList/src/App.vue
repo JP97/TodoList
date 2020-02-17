@@ -1,7 +1,8 @@
 <template>
     <div id="app">
         <!--med  v.bind sender man det todos array fra Data() til todosList component som får det i props se videre i todosList-->
-        <TodosList v-bind:todos="todos" />
+        <!-- catcher også det emittete event med v-on og kører så metoden deleteTodoItem -->
+        <TodosList v-bind:todos="todos" v-on:del-todoitem="deleteTodoItem"/>
     </div>
 </template>
 
@@ -32,6 +33,11 @@
                         completed: false
                     }
                 ]
+            }
+        },
+        methods: {
+            deleteTodoItem(id) {
+                this.todos = this.todos.filter(todos => todos.id !== id);
             }
         }
     };
