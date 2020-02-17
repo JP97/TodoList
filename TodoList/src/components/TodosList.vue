@@ -9,6 +9,7 @@
             <!-- v-on catcher eventet der blev fyret fra todoitem og emitter endnu længere tilbage til app-->
             <TodoItem v-bind:todoitem="todoitem" v-on:del-todoitem="$emit('del-todoitem', todoitem.id)"/>
         </div>
+        <AddTodoItem></AddTodoItem>
     </div>
 </template>
 
@@ -16,6 +17,7 @@
     // for at TodosItem kan blive brugt skal det importeres
     // da det ligger i samme mappe (components) er det her nok.
     import TodoItem from './TodoItem.vue';
+    import AddTodoItem from './AddTodoItem.vue';
 
     export default {
         //navn af det component
@@ -23,7 +25,8 @@
 
         //de components der bliver importeres skal tilføjes her for at kunne blive brugt
         components: {
-            TodoItem
+            TodoItem,
+            AddTodoItem
         },
         //her kommer de props fra App component hen til.
         //bliver gemt i et array der modtager "todos" samme navn som det der blev sendt.

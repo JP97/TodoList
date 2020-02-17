@@ -15,7 +15,7 @@
         name: 'app',
         components: {
             TodosList,
-            Header
+            Header,
         }, 
         data() {
             return {
