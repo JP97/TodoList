@@ -1,6 +1,6 @@
 <template>
     <header class="header">
-        <h1 class="title">this is my selfmade header for just.....have tried to make one</h1>
+        <h1 class="title">this is my selfmade header for just have made one</h1>
     </header>
 </template>
 
@@ -12,11 +12,11 @@
 
 <style scoped>
     .header{
-        background-color: aquamarine;
-        margin:auto;
+        background-color: #333;
+        color:#fff;
         text-align:center;
-        padding:2px;
-        width:100%;
+        padding:10px;
+        
     }
     .title{
         font-size:24px;
