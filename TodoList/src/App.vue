@@ -1,17 +1,21 @@
 <template>
     <div id="app">
+        <Header></Header>
         <!--med  v.bind sender man det todos array fra Data() til todosList component som får det i props se videre i todosList-->
-        <TodosList v-bind:todos="todos" />
+        <!-- catcher også det emittete event med v-on og kører så metoden deleteTodoItem -->
+        <TodosList v-bind:todos="todos" v-on:del-todoitem="deleteTodoItem"/>
     </div>
 </template>
 
 <script>
     import TodosList from './components/TodosList.vue';
+    import Header from './components/layout/Header.vue';
 
     export default {
         name: 'app',
         components: {
-            TodosList
+            TodosList,
+            Header,
         }, 
         data() {
             return {
@@ -19,19 +23,24 @@
                     {
                         id: 1,
                         name: 'Make a blog Post',
-                        done: true
+                        completed: true
                     },
                     {
                         id: 2,
-                        name: 'Remove the clothes that are dry',
-                        done: false
+                        name: 'Make components work together',
+                        completed: false
                     },
                     {
                         id: 3,
                         name: 'Be happy',
-                        done: false
+                        completed: false
                     }
                 ]
+            }
+        },
+        methods: {
+            deleteTodoItem(id) {
+                this.todos = this.todos.filter(todos => todos.id !== id);
             }
         }
     };
