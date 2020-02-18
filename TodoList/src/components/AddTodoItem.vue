@@ -1,6 +1,6 @@
 <template>
     <div class="addTodoItem">
-        <!-- prevent stops the reload from the page and shows the event in the devtools and dont messes with the added todoitem-->
+        <!-- prevents that the form tries to submit to a file...and the reload of the webpage-->
         <form @submit.prevent="addTodoItem">
             <!-- laver two way modelbinding med v-model.lazy der binder til det object todoItemName -->
             <input v-model.lazy="todoItemName" type="text" placeholder="Add new task"/>
@@ -26,6 +26,7 @@ import uuid from 'uuid';
         },
         methods: {
             addTodoItem() {
+                //could also have done addTodoItem(e){ e.preventDefault(); ....}
                 // construct the todoitem before emitting to app component
                 const newTodoItem = {
                     id: uuid.v4(),
@@ -33,6 +34,8 @@ import uuid from 'uuid';
                     completed: false
                 }
                 this.$emit('add-Todoitem', newTodoItem);
+                //clears the name of the created task from the webpage
+                this.todoItemName = ''
             }
         }
     }
